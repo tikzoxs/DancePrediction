@@ -70,6 +70,15 @@ def create_model(): #
 # 	model = keras.Model(inputs=inputs, outputs=outputs)
 # 	return model
 
+# # Model No.4 for 1 sec prediction
+# def create_model():
+# 	inputs = keras.Input(shape=(945,), name="past_data")
+# 	x = layers.Dense(1024, activation="relu", name="dense_1")(inputs)
+# 	x = layers.Dense(1024, activation="relu", name="dense_2")(x)
+# 	outputs = layers.Dense(945,name="predictions")(x)
+# 	model = keras.Model(inputs=inputs, outputs=outputs)
+# 	return model
+
 def predict_motion(model, past_frames):
 	in_x = np.reshape(past_frames,(1,945))
 	return model.predict(in_x)

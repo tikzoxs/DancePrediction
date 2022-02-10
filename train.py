@@ -70,6 +70,15 @@ def create_model(): #
 # 	model = keras.Model(inputs=inputs, outputs=outputs)
 # 	return model
 
+# # Model No.4 for 1 sec prediction
+# def create_model():
+# 	inputs = keras.Input(shape=(945,), name="past_data")
+# 	x = layers.Dense(1024, activation="relu", name="dense_1")(inputs)
+# 	x = layers.Dense(1024, activation="relu", name="dense_2")(x)
+# 	outputs = layers.Dense(945,name="predictions")(x)
+# 	model = keras.Model(inputs=inputs, outputs=outputs)
+# 	return model
+
 dataset_path = "tfds_dataset/"
 ds = tf.data.experimental.load("tfds_dataset/")
 train_ds, val_ds, test_ds = get_dataset_partitions_tf(ds)
